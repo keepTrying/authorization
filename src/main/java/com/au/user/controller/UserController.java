@@ -1,14 +1,14 @@
-package com.cn.ypd.controller;  
+package com.au.user.controller;  
   
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;  
 import org.springframework.ui.Model;  
-import org.springframework.web.bind.annotation.RequestMapping;  
-  
-import com.cn.ypd.domain.User;  
-import com.cn.ypd.service.IUserService;  
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.au.common.domain.User;
+import com.au.user.service.IUserService;  
   
 @Controller  
 @RequestMapping("/user")  

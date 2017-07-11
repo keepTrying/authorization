@@ -11,8 +11,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;  
  
 import com.alibaba.fastjson.JSON;
-import com.cn.ypd.domain.User;
-import com.cn.ypd.service.IUserService;  
+import com.au.common.domain.User;
+import com.au.user.service.IUserService;  
 
  
 @RunWith(SpringJUnit4ClassRunner.class)     //表示继承了SpringJUnit4ClassRunner类  

@@ -1,6 +1,6 @@
-package com.cn.ypd.mapper;
+package com.au.user.mapper;
 
-import com.cn.ypd.domain.User;
+import com.au.common.domain.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
