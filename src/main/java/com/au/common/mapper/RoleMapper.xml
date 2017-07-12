@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.au.common.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="com.au.common.domain.Role">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from u_role
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from u_role
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.au.common.domain.Role">
+    insert into u_role (id, name, type
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.au.common.domain.Role">
+    insert into u_role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.au.common.domain.Role">
+    update u_role
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.au.common.domain.Role">
+    update u_role
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  
+  <select id="findRoleByUserId" resultType="java.lang.String">
+  		select r.type from u_role r,u_user_role ur where ur.rid = r.id and ur.uid = #{id,jdbcType=BIGINT}
+  </select>
+  
+  <!-- 查询用户全部的role & permission -->
+  <resultMap id="findNowAllPermission_resultMap" extends="BaseResultMap" type="com.au.common.domain.Role" >
+  	<collection property="permissions" javaType="com.au.common.domain.Permission">
+  	 	<id column="pid" property="id" jdbcType="BIGINT" />
+    	<result column="pname" property="name" jdbcType="VARCHAR" />
+    	<result column="url" property="url" jdbcType="VARCHAR" />
+  	</collection>
+  </resultMap>
+  <!-- 根据用户ID，查询所有权限 -->
+  <select id="findNowAllPermission" resultMap="findNowAllPermission_resultMap">
+	select ur.id,ur.name,ur.type ,up.id pid,up.url,up.name pname 
+		from u_user_role uur 
+		left join u_role ur on uur.rid = ur.id
+		left join u_role_permission urp on urp.rid = ur.id
+		left join u_permission up on up.id = urp.pid
+        where uid = #{id,jdbcType=BIGINT}
+  </select>
+</mapper>

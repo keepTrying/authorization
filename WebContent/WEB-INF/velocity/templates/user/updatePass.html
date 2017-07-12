@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+            <title>
+                修改密码
+            </title>
+            <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+            <link href="../../../css/base.css" rel="stylesheet"/>
+            <link href="../../../css/user/updatePass.css" rel="stylesheet"/>
+        </meta>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row row-centered">
+                <div class="well col-md-6 col-centered">
+                    <h2>
+                        修改密码
+                    </h2>
+                    <form:form action="/updatePass" method="post" role="form">
+                        <div class="input-group input-group-md">
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <i class="glyphicon glyphicon-lock">
+                                </i>
+                            </span>
+                            <input class="form-control" id="oldpassword" name="oldpassword" placeholder="请输入旧密码" type="password"/>
+                        </div>
+                        <div class="input-group input-group-md">
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <i class="glyphicon glyphicon-lock">
+                                </i>
+                            </span>
+                            <input class="form-control" id="password" name="password" placeholder="请输入新密码" type="password"/>
+                        </div>
+                        <div class="input-group input-group-md">
+                            <span class="input-group-addon" id="sizing-addon1">
+                                <i aria-hidden="true" class="glyphicon glyphicon-user">
+                                </i>
+                            </span>
+                            <input class="form-control" id="password2" name="password2" placeholder="请重复新密码" type="text"/>
+                        </div>
+                        <div>
+                            <button class="btn btn-success btn-block-inline col-md-5" type="submit">
+                                提交
+                            </button>
+                            <button class="btn btn-info btn-block-inline col-md-5 col-md-offset-2">
+                                取消
+                            </button>
+                        </div>
+                    </form:form>
+                </div>
+            </div>
+        </div>
+        <div class="error">
+            <span>
+                +
+            </span>
+        </div>
+        <script src="../../js/jquery-3.1.1.min.js">
+        </script>
+        <script src="../../js/bootstrap.min.js">
+        </script>
+    </body>
+</html>

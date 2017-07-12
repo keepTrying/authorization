@@ -1,0 +1,6 @@
+.container{ display:table; height:100%;vertical-align: middle;} 
+.row{ display: table-cell; vertical-align: middle; } /* centered columns styles */ 
+.row-centered { text-align:center; } 
+.col-centered { display:inline-block; float:none; text-align:left; margin-right:-4px; }
+body{margin-top: 100px;}
+.input-group{margin:10px,0px;}

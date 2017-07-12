@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+            <title>
+                登录
+            </title>
+            <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+            <link href="../../css/base.css" rel="stylesheet"/>
+            <link href="../../css/common/footer.css" rel="stylesheet"/>
+            <link href="../../css/common/header.css" rel="stylesheet"/>
+            <link href="../../css/common/left.css" rel="stylesheet"/>
+            <link href="../../css/common/default.css" rel="stylesheet"/>
+            $css
+        </meta>
+    </head>
+    <body>
+    <div id="header>#parse( 'layout/header.html' )</div>  
+            <div id= "content" class="row">  
+                <div id= "sub" class="col-sm-2">#parse('layout/left.html')</div>  
+                <div id= "main" class="col-sm-10">$screen_content</div>  
+            </div>  
+            <div id= "footer" >#parse( 'layout/footer.vm' )</div>
+    <script src="../../js/jquery-3.1.1.min.js">
+    </script>
+    <script src="../../js/bootstrap.min.js">
+    </script>
+    $script
+    </body>
+</html>

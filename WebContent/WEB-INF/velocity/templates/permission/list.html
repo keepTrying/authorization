@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+            <title>
+                登录
+            </title>
+            <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+            <link href="../../../css/base.css" rel="stylesheet"/>
+            <link href="../../../css/permission/list.css" rel="stylesheet"/>
+        </meta>
+    </head>
+    <body>
+        <h2>
+            权限列表
+        </h2>
+        <hr>
+            <form action="" class="form-inline" id="formId" method="post">
+                <div clss="well">
+                    <div class="form-group">
+                        <input class="form-control" id="findContent" name="findContent" placeholder="输入角色类型 / 角色名称" style="width: 300px;" type="text" value="">
+                        </input>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary" type="submit">
+                            查询
+                        </button>
+                        <a class="btn btn-success" onclick="$('#addrole').modal();">
+                            增加角色
+                        </a>
+                        <button class="btn btn-danger" id="deleteAll" type="button">
+                            Delete
+                        </button>
+                    </span>
+                </div>
+                <hr>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <input id="checkAll" type="checkbox"/>
+                                </th>
+                                <th>
+                                    角色名称
+                                </th>
+                                <th>
+                                    角色类型
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input check="box" type="checkbox" value="1"/>
+                                </td>
+                                <td>
+                                    系统管理员
+                                </td>
+                                <td>
+                                    888888
+                                </td>
+                                <td>
+                                    -
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input check="box" type="checkbox" value="3"/>
+                                </td>
+                                <td>
+                                    权限角色
+                                </td>
+                                <td>
+                                    100003
+                                </td>
+                                <td>
+                                    <i class="glyphicon glyphicon-remove">
+                                    </i>
+                                    <a href="javascript:deleteById([3]);">
+                                        删除
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input check="box" type="checkbox" value="4"/>
+                                </td>
+                                <td>
+                                    用户中心
+                                </td>
+                                <td>
+                                    100002
+                                </td>
+                                <td>
+                                    <a href="javascript:deleteById([4]);">
+                                        删除
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagination pull-right">
+                        <ul class="pagination">
+                            <li class="active">
+                                <a href="javascript:void(0);">
+                                    1
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </hr>
+            </form>
+            <script src="../../js/jquery-3.1.1.min.js">
+            </script>
+            <script src="../../js/bootstrap.min.js">
+            </script>
+        </hr>
+    </body>
+</html>

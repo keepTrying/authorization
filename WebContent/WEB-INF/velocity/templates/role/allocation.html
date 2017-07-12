@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+            <title>
+                登录
+            </title>
+            <link href="../../../css/bootstrap.min.css" rel="stylesheet"/>
+            <link href="../../../css/base.css" rel="stylesheet"/>
+            <link href="../../../css/role/allocation.css" rel="stylesheet"/>
+        </meta>
+    </head>
+    <body>
+        <h2>
+            角色列表
+        </h2>
+        <hr>
+            <form action="" class="form-inline" id="formId" method="post">
+                <div clss="well">
+                    <div class="form-group">
+                        <input class="form-control" id="findContent" name="findContent" placeholder="输入用户昵称 / 用户帐号" style="width: 300px;" type="text" value="">
+                        </input>
+                    </div>
+                    <span class="">
+                        <button class="btn btn-primary" type="submit">
+                            查询
+                        </button>
+                        <button class="btn btn-danger" id="deleteAll" type="button">
+                            清空用户角色
+                        </button>
+                    </span>
+                </div>
+                <hr>
+                    <table class="table table-bordered">
+                        <input id="selectUserId" type="hidden">
+                            <tbody>
+                                <tr>
+                                    <th width="5%">
+                                        <input id="checkAll" type="checkbox"/>
+                                    </th>
+                                    <th width="10%">
+                                        用户昵称
+                                    </th>
+                                    <th width="10%">
+                                        Email/帐号
+                                    </th>
+                                    <th width="10%">
+                                        状态
+                                    </th>
+                                    <th width="55%">
+                                        拥有的角色
+                                    </th>
+                                    <th width="10%">
+                                        操作
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input check="box" type="checkbox" value="1"/>
+                                    </td>
+                                    <td>
+                                        管理员
+                                    </td>
+                                    <td>
+                                        admin
+                                    </td>
+                                    <td>
+                                        有效
+                                    </td>
+                                    <td roleids="1">
+                                        系统管理员
+                                    </td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-share-alt">
+                                        </i>
+                                        <a href="javascript:selectRoleById(1);">
+                                            选择角色
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input check="box" type="checkbox" value="11"/>
+                                    </td>
+                                    <td>
+                                        soso
+                                    </td>
+                                    <td>
+                                        8446666@qq.com
+                                    </td>
+                                    <td>
+                                        有效
+                                    </td>
+                                    <td roleids="3,4">
+                                        权限角色,用户中心
+                                    </td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-share-alt">
+                                        </i>
+                                        <a href="javascript:selectRoleById(11);">
+                                            选择角色
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input check="box" type="checkbox" value="12"/>
+                                    </td>
+                                    <td>
+                                        8446666
+                                    </td>
+                                    <td>
+                                        8446666
+                                    </td>
+                                    <td>
+                                        有效
+                                    </td>
+                                    <td roleids="4">
+                                        用户中心
+                                    </td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-share-alt">
+                                        </i>
+                                        <a href="javascript:selectRoleById(12);">
+                                            选择角色
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input check="box" type="checkbox" value="13"/>
+                                    </td>
+                                    <td>
+                                        test
+                                    </td>
+                                    <td>
+                                        test
+                                    </td>
+                                    <td>
+                                        有效
+                                    </td>
+                                    <td roleids="1">
+                                        系统管理员
+                                    </td>
+                                    <td>
+                                        <i class="glyphicon glyphicon-share-alt">
+                                        </i>
+                                        <a href="javascript:selectRoleById(13);">
+                                            选择角色
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </input>
+                    </table>
+                    <div class="pagination pull-right">
+                        <ul class="pagination">
+                            <li class="active">
+                                <a href="javascript:void(0);">
+                                    1
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </hr>
+            </form>
+            <script src="../../js/jquery-3.1.1.min.js">
+            </script>
+            <script src="../../js/bootstrap.min.js">
+            </script>
+        </hr>
+    </body>
+</html>
